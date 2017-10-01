@@ -6,7 +6,8 @@
   "dependencies": {
     "mocha": "^3.4.2",
     "original-require": "^1.0.1",
-    "solc": "0.4.11"
+    "solc": "0.4.11",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.16",
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "build": "npm run build-cli",
-    "build-cli": "webpack --config ./cli.webpack.config.js"
+    "build-cli": "webpack --config ./cli.webpack.config.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -41,5 +44,6 @@
       "email": "tim@timothyjcoulter.com",
       "url": "https://github.com/tcoulter"
     }
-  ]
+  ],
+  "snyk": true
 }
